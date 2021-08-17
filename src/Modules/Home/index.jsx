@@ -1,19 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import './index.css'
 import OverViewComponent from "./Overview.component";
 import TransactionsComponent from "./Transaction.component";
 
-const Container = styled.div`
-  background-color: white;
-  color: #0d1d2c;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 22px;
-  font-size: 18px;
-  width: 360px;
-  align-items: center;
-  justify-content: space-between;
-`;
 
 const HomeComponent = (props) => {
   const [transactions, updateTransaction] = useState([]);
@@ -39,7 +28,7 @@ const HomeComponent = (props) => {
     updateTransaction(transactionArray);
   };
   return (
-    <Container>
+    <div className="i-container">
       <OverViewComponent
         expense={expense}
         income={income}
@@ -50,7 +39,7 @@ const HomeComponent = (props) => {
       ) : (
         ""
       )}
-    </Container>
+    </div>
   );
 };
 export default HomeComponent;
